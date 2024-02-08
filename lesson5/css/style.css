@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+.container {
+    margin: 107px auto;
+    display: flexbox;
+    max-width: 1200px;
+    height: auto;
+    padding: 0 15px;  
+    
+
+}
+.headline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-family: Raleway;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.line {
+    max-width: 170px;
+    height: 1px;
+    background-color: #EC7979;
+    margin: 0 auto; 
+  }
+
+.Lorem {
+    margin-top: 40px;
+    margin-bottom: 92px;
+    color: #86878B;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.customers {
+    display: flex;
+    max-width: 1200px;
+    height: auto;
+    justify-content: space-between;
+}
+.customer_1 {
+    width: 30%;
+}
+.customer_2 {
+    width: 30%;
+}
+.customer_3 {
+    width: 30%;
+
+}
+.customers_text {
+    padding: 38px 25px;
+    border-radius: 10px;
+    background: rgb(226, 226, 226);
+    color: rgb(134, 135, 139);
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+}
+.customers_text__triangle {
+    position: relative;
+    left: 70px;
+    width: 0px;
+	height: 0;
+	border-left: 20px solid transparent ;
+	border-right: 20px solid transparent;
+	border-top: 30px solid rgb(226, 226, 226);
+    background: transparent;
+}
+.customer_info {
+    margin-top: 66px;
+    display: flex;
+}
+.customer_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+.customer_name {
+    position: relative;
+    top: -30px;
+    margin-bottom: 18px;
+    display: flex;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    text-transform: capitalize;
+}
+.customer_job {
+    position: relative;
+    height: 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+}
