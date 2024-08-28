@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '../searchbar/searchbar.tsx'; // Импортируйте ваш компонент SearchBar
+import SearchBar from '../searchbar/searchbar.tsx'; 
 import './styles.scss';
 
 interface HeaderProps {

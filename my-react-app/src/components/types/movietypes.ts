@@ -6,7 +6,7 @@ export interface IMovie {
     Poster: string;
   }
   
-  // Можно расширять интерфейсы, например:
+
   export interface IMovieWithRating extends IMovie {
     Rating: string;
   }

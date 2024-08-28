@@ -4,25 +4,18 @@
     box-sizing: border-box;
   }
   
-  /* Устанавливаем базовые стили для html и body */
+  
   html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #f8f9fa; /* Или другой цвет фона по вашему выбору */
+    background-color: #f8f9fa; 
   }
   
-  /* Убираем лишние границы и отступы */
+
   body {
     border: none;
-    overflow-x: hidden; /* Чтобы избежать горизонтальной прокрутки */
+    overflow-x: hidden; 
   }
   
-  /* Дополнительные настройки для header, если необходимо */
-  header {
-    /* Например, если header требует специальных стилей */
-    width: 100%;
-    background-color: #fff; /* Пример: белый фон */
-    /* Другие стили для header */
-  }

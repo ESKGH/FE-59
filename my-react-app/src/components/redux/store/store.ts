@@ -1,5 +1,4 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { moviesReducer, MoviesState } from '../reducers/moviesreducers.ts';
 import { MoviesActionTypes } from '../reducers/moviesreducers.ts';
 
