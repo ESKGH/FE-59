@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './components/redux/store/store.ts'
 import AppRouter from './components/router/approuter.tsx';
+import './styles.scss'
 
 ReactDOM.render(
   <Provider store={store}>
