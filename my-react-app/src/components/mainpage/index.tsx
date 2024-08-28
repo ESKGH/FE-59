@@ -27,7 +27,7 @@ export const MainPage: React.FC<MainPageProps> = ({ searchTerm }) => {
     fetchData();
   }, [dispatch, searchTerm]);
 
-  // Проверка на наличие данных
+ 
   if (!movies || movies.length === 0) {
     return <p>No movies found.</p>;
   }

@@ -14,65 +14,41 @@
   }
   
   .movieCard {
-    background-color: #ffffff;
+    width: 250px;
+    margin: 15px;
+    padding: 10px;
+    background-color: #f5f5f5;
     border-radius: 8px;
-    overflow: hidden;
-    max-width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
   
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
   
-    .moviecard__image {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-bottom: 2px solid #e9ecef;
-    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
   
-    .moviecard__content {
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
   
-    .moviecard__title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-  
-    .moviecard__year {
-      font-size: 14px;
-      color: #6c757d;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-  
-    .moviecard__button {
-      padding: 10px 15px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #0056b3;
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        text-align: center;
       }
     }
   }
+  
   
   .pagination {
     display: flex;
