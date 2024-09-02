@@ -1,6 +1,5 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { moviesReducer, MoviesState } from '../reducers/moviesreducers.ts';
-import { MoviesActionTypes } from '../reducers/moviesreducers.ts';
+import { createStore, combineReducers } from 'redux';
+import { moviesReducer } from '../reducers/moviesreducers';
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
@@ -8,9 +7,6 @@ const rootReducer = combineReducers({
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-const store = createStore(
-  rootReducer,
-//   applyMiddleware(thunk as unknown as ThunkMiddleware<RootState, MoviesActionTypes>)
-);
+const store = createStore(rootReducer);
 
 export default store;
