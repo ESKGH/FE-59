@@ -22,7 +22,7 @@ const MainPage: React.FC<MainPageProps> = ({ searchTerm }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let queries = ['batman', 'superman', 'spiderman', 'ironman', 'star wars', 'pivo', 'sat', 'say', 'sleep']; 
+      let queries = ['batman', 'ant', 'spiderman', 'ironman', 'star wars', 'pivo', 'sat', 'say', 'sleep']; 
       if (searchTerm) {
         queries = [searchTerm];
       }
@@ -96,28 +96,10 @@ const MainPage: React.FC<MainPageProps> = ({ searchTerm }) => {
         page + 1 === currentPage - 1 ||
         page + 1 === currentPage + 1 ||
         page + 1 === currentPage - 2 ||
-        page + 1 === currentPage + 2
+        page + 1 === currentPage + 2 ||
+        page === 0 ||
+        page + 1 === Math.ceil(filteredMovies.length / moviesPerPage)
       ) {
-        return (
-          <button
-            key={page}
-            onClick={() => paginate(page + 1)}
-            className={`pagination__button ${currentPage === page + 1? 'active' : ''}`}
-          >
-            {page + 1}
-          </button>
-        );
-      } else if (page === 0) {
-        return (
-          <button
-            key={page}
-            onClick={() => paginate(page + 1)}
-            className={`pagination__button ${currentPage === page + 1? 'active' : ''}`}
-          >
-            {page + 1}
-          </button>
-        );
-      } else if (page + 1 === Math.ceil(filteredMovies.length / moviesPerPage)) {
         return (
           <button
             key={page}
