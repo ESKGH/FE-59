@@ -22,10 +22,19 @@ const MainPage: React.FC<MainPageProps> = ({ searchTerm }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const movies = await fetchMovies(searchTerm || 'batman');
-      dispatch(setMovies(movies));
+      let queries = ['batman', 'superman', 'spiderman', 'ironman', 'star wars', 'pivo', 'sat', 'say', 'sleep']; 
+      if (searchTerm) {
+        queries = [searchTerm];
+      }
+      const promises = queries.map(async (query) => {
+        const movies = await fetchMovies(query);
+        return movies;
+      });
+      const results = await Promise.all(promises);
+      const allMovies = results.flat();
+      dispatch(setMovies(allMovies));
     };
-
+  
     fetchData();
   }, [dispatch, searchTerm]);
 
@@ -80,20 +89,59 @@ const MainPage: React.FC<MainPageProps> = ({ searchTerm }) => {
         ))}
       </div>
       {filteredMovies.length > moviesPerPage && (
-        <div className="pagination">
-          {[...Array(Math.ceil(filteredMovies.length / moviesPerPage)).keys()].map((page) => (
-            <button
-              key={page}
-              onClick={() => paginate(page + 1)}
-              className={`pagination__button ${currentPage === page + 1 ? 'active' : ''}`}
-            >
-              {page + 1}
-            </button>
-          ))}
-        </div>
-      )}
+  <div className="pagination">
+    {[...Array(Math.ceil(filteredMovies.length / moviesPerPage)).keys()].map((page) => {
+      if (
+        page + 1 === currentPage ||
+        page + 1 === currentPage - 1 ||
+        page + 1 === currentPage + 1 ||
+        page + 1 === currentPage - 2 ||
+        page + 1 === currentPage + 2
+      ) {
+        return (
+          <button
+            key={page}
+            onClick={() => paginate(page + 1)}
+            className={`pagination__button ${currentPage === page + 1? 'active' : ''}`}
+          >
+            {page + 1}
+          </button>
+        );
+      } else if (page === 0) {
+        return (
+          <button
+            key={page}
+            onClick={() => paginate(page + 1)}
+            className={`pagination__button ${currentPage === page + 1? 'active' : ''}`}
+          >
+            {page + 1}
+          </button>
+        );
+      } else if (page + 1 === Math.ceil(filteredMovies.length / moviesPerPage)) {
+        return (
+          <button
+            key={page}
+            onClick={() => paginate(page + 1)}
+            className={`pagination__button ${currentPage === page + 1? 'active' : ''}`}
+          >
+            {page + 1}
+          </button>
+        );
+      } else if (page + 1 === currentPage - 3) {
+        return <span key={page}>...</span>;
+      } else if (page + 1 === currentPage + 3) {
+        return <span key={page}>...</span>;
+      } else {
+        return null;
+      }
+    })}
+  </div>
+)}
     </div>
   );
 };
 
 export default MainPage;
+
+
+
